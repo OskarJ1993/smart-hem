@@ -3,103 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smarta eluttag & energimätare – Kapa elkostnaden hemma</title>
+    <title>Smart Hem & Budgetkoll – Smarta eluttag som sparar el</title>
     <style>
         :root {
-            --primary-color: #0f172a;
-            --accent-color: #2563eb;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-color: #334155;
-            --border-color: #e2e8f0;
+            --bg-main: #090d16;
+            --bg-card: #111827;
+            --border-color: #1f2937;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --success: #10b981;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.7;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 3rem 1rem;
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 4rem 1.5rem;
             text-align: center;
         }
         header h1 {
-            margin: 0 0 0.5rem 0;
-            font-size: 2rem;
+            margin: 0 0 0.75rem 0;
+            font-size: 2.5rem;
+            letter-spacing: -0.025em;
+            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         header p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            margin: 0;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
         main {
-            max-width: 800px;
-            margin: -2rem auto 3rem auto;
-            padding: 0 1rem;
+            max-width: 850px;
+            margin: -3rem auto 4rem auto;
+            padding: 0 1.5rem;
+            position: relative;
         }
         .card {
-            background-color: var(--card-bg);
+            background-color: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2.5rem;
         }
         h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
+            color: var(--text-main);
+            font-size: 1.5rem;
             margin-top: 0;
+            margin-bottom: 1rem;
+            letter-spacing: -0.015em;
+        }
+        p {
+            color: var(--text-muted);
+        }
+        ul, ol {
+            color: var(--text-muted);
+            padding-left: 1.2rem;
+        }
+        li {
+            margin-bottom: 0.75rem;
+        }
+        strong {
+            color: var(--text-main);
         }
         .product-box {
-            background-color: #f1f5f9;
-            border-left: 4px solid var(--accent-color);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 8px 8px 0;
+            background-color: rgba(17, 24, 39, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+        }
+        @media (min-width: 640px) {
+            .product-box {
+                flex-direction: row;
+                text-align: left;
+                gap: 2rem;
+            }
         }
         .product-box img {
             width: 100%;
-            max-width: 250px;
+            max-width: 200px;
             height: auto;
-            border-radius: 6px;
-            margin-bottom: 1rem;
-            background: white;
-            padding: 0.5rem;
-            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: #ffffff;
+            padding: 1rem;
+            object-fit: contain;
         }
-        .product-box h3 {
+        .product-info h3 {
+            color: var(--text-main);
             margin-top: 0;
-            color: var(--primary-color);
-            text-align: left;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
         }
-        .product-box p {
-            text-align: left;
+        .product-info p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
         }
         .cta-btn {
             display: inline-block;
-            background-color: var(--accent-color);
+            background-color: var(--accent);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-            transition: background-color 0.2s;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
         }
         .cta-btn:hover {
-            background-color: #1d4ed8;
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
         }
         footer {
             text-align: center;
-            padding: 2rem;
-            color: #64748b;
-            font-size: 0.9rem;
+            padding: 3rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
             border-top: 1px solid var(--border-color);
         }
     </style>
@@ -108,35 +143,37 @@
 
     <header>
         <h1>Smart Hem & Budgetkoll</h1>
-        <p>Smarta guider och prylar som sänker dina fasta kostnader</p>
+        <p>Smarta guider och energismarta val som kapar dina fasta kostnader</p>
     </header>
 
     <main>
         <div class="card">
             <h2>Så kapar du elräkningen med ett smart eluttag</h2>
-            <p>Många hushåll har dolda energitjuvar som står i standby-läge dygnet runt. Genom att installera en smart plug (ett smart eluttag) kan du få full koll på dina apparater och schemalägga när de ska vara avstängda.</p>
+            <p>Många hushåll har dolda energitjuvar som drar ström dygnet runt i så kallat standby-läge. Genom att installera en smart plug kan du övervaka exakt förbrukning och styra hushållsapparaterna direkt från mobilen.</p>
             
-            <h3>Varför du bör skaffa en smart plug:</h3>
+            <h3 style="color: #f3f4f6; font-size: 1.1rem; margin-top: 1.5rem;">Fördelar med en smart plug:</h3>
             <ul>
-                <li><strong>Minska onödigt slöseri:</strong> Upptäck vilka hushållsapparater som drar ström i tysthet.</li>
-                <li><strong>Automatisera:</strong> Stäng av strömmen automatiskt på natten eller när du inte är hemma.</li>
-                <li><strong>Enkel installation:</strong> Sätts direkt i det befintliga vägguttaget – ingen elektriker behövs.</li>
+                <li><strong>Full kontroll:</strong> Se exakt hur mycket el dina apparater drar i realtid.</li>
+                <li><strong>Automatisering:</strong> Schemalägg när uttaget ska vara igång och när det ska släckas helt.</li>
+                <li><strong>Enkel installation:</strong> Pluggas rakt in i vägguttaget – helt utan krångel eller elinstallatör.</li>
             </ul>
 
             <div class="product-box">
                 <img src="68904945451038.avif" alt="Plejd SPR-01 Smartplugg">
-                <h3>Rekommenderat val: Plejd Smartplugg</h3>
-                <p>En av de mest populära och driftsäkra modellerna på den svenska marknaden för att styra belysning och apparater.</p>
-                <a href="#" class="cta-btn">Kolla pris och tillgänglighet</a>
+                <div class="product-info">
+                    <h3>Rekommenderat val: Plejd Smartplugg</h3>
+                    <p>En av marknadens mest uppskattade och driftsäkra modeller för att smidigt styra belysning och enklare apparater via appen.</p>
+                    <a href="#" class="cta-btn">Kolla pris och tillgänglighet</a>
+                </div>
             </div>
         </div>
 
         <div class="card">
-            <h2>3 snabba tips för att minska elförbrukningen direkt</h2>
+            <h2>3 snabba tips för lägre elförbrukning</h2>
             <ol>
-                <li><strong>Släck efter dig:</strong> Byt ut gamla glödlampor till effektiva LED-lampor.</li>
-                <li><strong>Kylskåp och frys:</strong> Säkerställ att temperaturen är rätt (+4°C i kyl, -18°C i frys) för att undvika onödig elförbrukning.</li>
-                <li><strong>Standby-läget:</strong> Använd grendosor med strömbrytare för TV och mediaboxar så att de stängs av helt när de inte används.</li>
+                <li><strong>Byt till LED:</strong> Ersätt äldre ljuskällor med energieffektiva LED-lampor i alla rum.</li>
+                <li><strong>Rätt temperatur:</strong> Håll +4°C i kylen och -18°C i frysen för optimal effektivitet utan onödig elåtgång.</li>
+                <li><strong>Samlingsbrytare:</strong> Använd grenuttag med strömbrytare för TV-hörnan så att allt stängs av ordentligt på natten.</li>
             </ol>
         </div>
     </main>
