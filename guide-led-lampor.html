@@ -74,6 +74,59 @@
         li {
             margin-bottom: 0.75rem;
         }
+        .product-box {
+            background-color: rgba(17, 24, 39, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        @media (min-width: 640px) {
+            .product-box {
+                flex-direction: row;
+                text-align: left;
+                gap: 2rem;
+            }
+        }
+        .product-box img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            background: #ffffff;
+            padding: 1rem;
+            object-fit: contain;
+        }
+        .product-info h3 {
+            color: var(--text-main);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+        .product-info p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        .cta-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+        }
         .back-link {
             display: inline-block;
             margin-bottom: 1.5rem;
@@ -113,6 +166,15 @@
                 <li><strong>Automatiska scheman:</strong> Ställ in så att lamporna tänds när du kommer hem och släcks automatiskt när du somnar eller lämnar lägenheten.</li>
                 <li><strong>Röst- och appstyrning:</strong> Dämpa ljuset eller byt färgton direkt via mobilen utan att behöva resa dig från soffan.</li>
             </ul>
+
+            <div class="product-box">
+                <img src="lampa.jpeg" alt="Smart LED-lampa">
+                <div class="product-info">
+                    <h3>Rekommenderat val: Smart LED-lampa</h3>
+                    <p>En energieffektiv ljuskälla som styrs direkt via app eller röststyrning för att spara el och skapa rätt stämning.</p>
+                    <a href="#" class="cta-btn">Kolla pris och tillgänglighet</a>
+                </div>
+            </div>
         </div>
 
         <div class="card">
