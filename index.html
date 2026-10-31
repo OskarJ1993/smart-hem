@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Hem & Budgetkoll – Smarta guider för lägre elräkning</title>
+    <style>
+        :root {
+            --bg-main: #090d16;
+            --bg-card: #111827;
+            --border-color: #1f2937;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0 0 0.75rem 0;
+            font-size: 2.5rem;
+            letter-spacing: -0.025em;
+            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        main {
+            max-width: 900px;
+            margin: -3rem auto 4rem auto;
+            padding: 0 1.5rem;
+            position: relative;
+        }
+        .intro-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+        .intro-card h2 {
+            color: var(--text-main);
+            margin-top: 0;
+            font-size: 1.75rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .article-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+        .article-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            background: #ffffff;
+            padding: 1rem;
+        }
+        .article-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .article-content h3 {
+            margin-top: 0;
+            color: var(--text-main);
+            font-size: 1.25rem;
+        }
+        .article-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+        .read-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 1rem;
+            transition: background-color 0.2s;
+        }
+        .read-btn:hover {
+            background-color: var(--accent-hover);
+        }
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Smart Hem & Budgetkoll</h1>
+        <p>Oberoende guider och smarta val som sänker dina fasta kostnader</p>
+    </header>
+
+    <main>
+        <div class="intro-card">
+            <h2>Välkommen till din genväg för ett smartare hem</h2>
+            <p>Här samlar vi enkla och konkreta guider för dig som vill ha full kontroll över energiförbrukningen, kapa dolda elkostnader och automatisera hemmet utan krångel.</p>
+        </div>
+
+        <h3 class="section-title">Senaste guiderna</h3>
+
+        <div class="grid">
+            <!-- Artikel 1 -->
+            <div class="article-card">
+                <img src="68904945451038.avif" alt="Plejd Smartplugg">
+                <div class="article-content">
+                    <h3>Så kapar du elräkningen med ett smart eluttag</h3>
+                    <p>Upptäck dolda energitjuvar och lär dig hur en smart plug ger dig full koll på förbrukningen direkt i mobilen.</p>
+                    <a href="guide-eluttag.html" class="read-btn">Läs guiden</a>
+                </div>
+            </div>
+
+            <!-- Plats för nästa artikel i framtiden -->
+            <div class="article-card" style="opacity: 0.6; border: 2px dashed var(--border-color); background: transparent;">
+                <div class="article-content" style="justify-content: center; text-align: center; align-items: center;">
+                    <h3 style="color: var(--text-muted);">Nästa guide på gång...</h3>
+                    <p>Håll utkik efter kommande guider om smart belysning och uppvärmning.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Smart Hem & Budgetkoll. Alla rättigheter förbehållna.</p>
+    </footer>
+
+</body>
+</html>
